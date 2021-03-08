@@ -1,0 +1,15 @@
+[
+	{
+		"title": "Find a workspace",
+		"link": "/find-a-workspace"
+	},
+	{
+		"title": "For companies",
+		"link": "for-companies"
+	},
+	{
+		"title": "Become a host",
+		"link": "/become-a-host",
+		"icon": true
+	}
+]

@@ -1,42 +1,40 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+import SiteLogo from './site-logo';
+import Menu from './menu';
+import Login from './login';
+
+const StyledHeader = styled.header`
+	padding-top: 51px;
+	padding-bottom: 63px;
+`;
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+	<StyledHeader>
+		<div className="Site-container">
+			<div className="row d-flex align-items-center">
+				<div className="col-2">
+					<SiteLogo />
+				</div>
+				<div className="col-8">
+					<Menu />
+				</div>
+				<div className="col-2 d-flex justify-content-end">
+					<Login />
+				</div>
+			</div>
+		</div>
+	</StyledHeader>
+);
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+	siteTitle: PropTypes.string,
+};
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+	siteTitle: ``,
+};
 
-export default Header
+export default Header;

@@ -2,13 +2,20 @@
  * Base
  *
  * @package WordPress
- * @subpackage MatthieuTeyssandier
+ * @subpackage Codi
  * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  */
 
 :root {
+	--white: #{the_color(white)};
+	--black: #{the_color(black)};
 	--blue-pure: #{the_color(blue, pure)};
 	--blue-dark-grayish: #{the_color(blue, dark-grayish)};
+	--blue-vivid: #{the_color(blue, vivid)};
+	--blue-light-grayish: #{the_color(blue, light-grayish)};
+	--yellow-bright: #{the_color(yellow, bright)};
+	--cyan-bright: #{the_color(cyan, bright)};
+	--red-very-dark-grayish: #{the_color(red, very-dark-grayish)};
 	--ease-out-expo: #{map-get($easings, ease-out-expo)};
 }
 

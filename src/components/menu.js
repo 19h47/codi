@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import data from '../../content/menu.json';
+import menus from '../../content/menus.json';
 import Heart from '../images/svg/heart.inline.svg';
 
 const StyledMenu = styled.div``;
@@ -30,7 +30,7 @@ const StyledLink = styled(Link)`
 	display: flex;
 	align-items: center;
 	padding: 6px;
-	color: ${props => (props.icon ? 'var(--blue-pure)' : 'var(--blue-dark-grayish)')};
+	color: ${props => ('true' === props.icon ? 'var(--blue-pure)' : 'var(--blue-dark-grayish)')};
 	transition: color 0.5s var(--ease-out-expo);
 	will-change: color;
 	line-height:18px;
@@ -38,10 +38,10 @@ const StyledLink = styled(Link)`
 
 	&:focus,
 	&:hover {
-		color: ${props => (props.icon ? 'var(--blue-dark-grayish)' : 'var(--blue-pure)')};
+		color: ${props => ('true' === props.icon ? 'var(--blue-dark-grayish)' : 'var(--blue-pure)')};
 
 		svg {
-			fill: ${props => (props.icon ? 'var(--blue-dark-grayish)' : 'var(--blue-pure)')};
+			fill: ${props => ('true' === props.icon ? 'var(--blue-dark-grayish)' : 'var(--blue-pure)')};
 		}
 	}
 `;
@@ -56,9 +56,9 @@ const StyledHeart = styled(Heart)`
 const Menu = () => (
 	<StyledMenu>
 		<Ul>
-			{data.map((item, index) => (
+			{menus.main.map((item, index) => (
 				<Li key={index}>
-					<StyledLink to={item.link} icon={item.icon}>
+					<StyledLink to={item.link} icon={item.icon.toString()}>
 						{item.icon && <StyledHeart fill="#0078ff" />}
 						{item.title}
 					</StyledLink>

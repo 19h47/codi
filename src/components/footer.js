@@ -1,23 +1,163 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-// import styled from 'styled-components';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-const Footer = ({ siteTitle }) => (
-	<footer>
-		<div className="Site-container">
-			<div className="row">
-				<div className="col-12">FOOTER</div>
+import menus from '../../content/menus.json';
+
+import ArrowRight from '../images/svg/arrow-right.inline.svg';
+import AppStore from '../images/svg/app-store.inline.svg';
+import PlayStore from '../images/svg/play-store.inline.svg';
+import Socials from './socials';
+
+const StyledFooter = styled.footer`
+	padding-top: 140px;
+	padding-bottom: 66px;
+	background: linear-gradient(0deg, var(--blue-vivid), var(--blue-vivid)), var(--blue-pure);
+	border-top-right-radius: 100px;
+	border-top-left-radius: 100px;
+`;
+
+const Title = styled.h3`
+	color: var(--white);
+	margin: 0;
+
+	.font-family-cursive {
+		font-size: 70px;
+		line-height: ${60 / 70};
+		margin-right: 10px;
+		color: var(--yellow-bright);
+		font-weight: 400;
+	}
+`;
+
+const HorizontalLine = styled.hr`
+	background-color: var(--white);
+	opacity: 0.3;
+	border: none;
+	height: 1px;
+`;
+
+const Ul = styled.ul`
+	list-style-type: none;
+	color: var(--white);
+
+	a {
+		display: inline-block;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: ${36 / 16};
+	}
+`;
+
+const StyledArrowRight = styled(ArrowRight)`
+	margin-left: 17px;
+	fill: var(--red-very-dark-grayish);
+`;
+
+const StyledAppStore = styled(AppStore)`
+	width: 29px;
+	height: 29px;
+	margin-right: 17px;
+	fill: var(--white);
+`;
+
+const StyledPlayStore = styled(PlayStore)`
+	width: 29px;
+	height: 29px;
+	margin-right: 17px;
+	fill: var(--white);
+`;
+
+const Footer = () => {
+	return (
+		<StyledFooter>
+			<div className="Site-container">
+				<div className="row d-flex align-items-center" style={{ marginBottom: '71px' }}>
+					<div className="col-6">
+						<Title>
+							Become a Codi
+							<br />
+							<span className="font-family-cursive">host</span>now.
+						</Title>
+					</div>
+					<div className="col-6 d-flex justify-content-end">
+						<button className="Button" type="button">
+							Get started
+							<StyledArrowRight />
+						</button>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col-12">
+						<HorizontalLine />
+					</div>
+				</div>
+				<div className="row" style={{ marginTop: '87px' }}>
+					{menus.footer.map((item, index) => {
+						const child = item.items.map((child, childIndex) => (
+							<li key={childIndex}>
+								<Link to={child.link}>{child.title}</Link>
+							</li>
+						));
+
+						return (
+							<div className="col-3" key={index}>
+								<Ul>
+									<li>
+										<h4 style={{ marginBottom: '42px' }}>{item.title}</h4>
+									</li>
+									{child}
+								</Ul>
+							</div>
+						);
+					})}
+				</div>
+				<div className="row" style={{ marginTop: '207px' }}>
+					<div className="col-12">
+						<button
+							className="Button Button--has-border Button--is-white"
+							type="button"
+							style={{ marginRight: '25px' }}>
+							<StyledAppStore />
+							App Store
+						</button>
+						<button
+							className="Button Button--has-border Button--is-white"
+							type="button">
+							<StyledPlayStore />
+							Play Store
+						</button>
+					</div>
+				</div>
+				<div className="row d-flex align-items-center" style={{ marginTop: '28px' }}>
+					<div className="col-6" style={{ fontWeight: '500', color: 'var(--white)' }}>
+						<span style={{ fontSize: '16px', lineHeight: '29px' }}>
+							© 2020 Codi. All rights reserved.
+						</span>
+						<ul
+							style={{
+								listStyleType: 'none',
+								display: 'flex',
+								fontSize: '14px',
+								lineHeight: '24px',
+							}}>
+							<li style={{ opacity: '0.5', marginRight: '12px' }}>Privacy</li>
+							<li style={{ opacity: '0.5', marginRight: '12px' }}>Terms</li>
+							<li style={{ opacity: '0.5' }}>Sitemap</li>
+						</ul>
+					</div>
+					<div className="col-6 d-flex justify-content-end">
+						<Socials />
+					</div>
+				</div>
 			</div>
-		</div>
-	</footer>
-);
-
-Footer.propTypes = {
-
+		</StyledFooter>
+	);
 };
 
-Footer.defaultProps = {
+Footer.propTypes = {};
 
-};
+Footer.defaultProps = {};
 
 export default Footer;

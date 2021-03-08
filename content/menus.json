@@ -1,0 +1,57 @@
+{
+	"main": [
+		{
+			"title": "Find a workspace",
+			"link": "/find-a-workspace",
+			"icon": false
+		},
+		{
+			"title": "For companies",
+			"link": "for-companies",
+			"icon": false
+		},
+		{
+			"title": "Become a host",
+			"link": "/become-a-host",
+			"icon": true
+		}
+	],
+	"footer": [
+		{
+			"title": "Company",
+			"items": [
+				{
+					"title": "About",
+					"link": "/about"
+				},
+				{ "title": "Press", "link": "/" },
+				{ "title": "Careers", "link": "/" }
+			]
+		},
+		{
+			"title": "Explore",
+			"items": [
+				{ "title": "Locations", "link": "/" },
+				{ "title": "blog", "link": "/" },
+				{ "title": "Codi for Cities", "link": "/" }
+			]
+		},
+		{
+			"title": "Hosting",
+			"items": [
+				{ "title": "Become a Host", "link": "/" },
+				{ "title": "About Hosting", "link": "/" },
+				{ "title": "Hosting Link 2", "link": "/" }
+			]
+		},
+		{
+			"title": "Support",
+			"items": [
+				{ "title": "Help Center", "link": "/" },
+				{ "title": "FAQ", "link": "/" },
+				{ "title": "Standards", "link": "/" },
+				{ "title": "Contact Us", "link": "/" }
+			]
+		}
+	]
+}

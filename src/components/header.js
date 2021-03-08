@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import SiteLogo from './site-logo';
@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
 	padding-bottom: 63px;
 `;
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
 	<StyledHeader>
 		<div className="Site-container">
 			<div className="row d-flex align-items-center">
@@ -29,12 +29,8 @@ const Header = ({ siteTitle }) => (
 	</StyledHeader>
 );
 
-Header.propTypes = {
-	siteTitle: PropTypes.string,
-};
+Header.propTypes = {};
 
-Header.defaultProps = {
-	siteTitle: ``,
-};
+Header.defaultProps = {};
 
 export default Header;

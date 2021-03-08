@@ -19,6 +19,17 @@ $color-variations: (
 	blue: (
 		pure: #0078ff,
 		dark-grayish: #7c8495,
+		vivid: #0376f7,
+		light-grayish: #f8f9fb,
+	),
+	red: (
+		very-dark-grayish: #423f3f,
+	),
+	yellow: (
+		bright: #fcd230,
+	),
+	cyan: (
+		bright: #31e7b6,
 	),
 	socials: (
 		facebook: #3b5998,
@@ -52,6 +63,9 @@ $font: (
 			),
 			title: (
 				'"Inter", sans-serif',
+			),
+			cursive: (
+				'"Guthen Bloots", cursive',
 			),
 		),
 	/**

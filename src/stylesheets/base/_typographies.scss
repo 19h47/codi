@@ -6,17 +6,19 @@
 
 h1,
 .h1 {
-	@extend %font-family-title, %font-weight-regular;
+	@extend %font-family-title, %font-weight-black;
 	@include margin(top 0.5em bottom 0.5em);
 
-	font-size: 40px;
-	line-height: (48/40);
+	font-size: 120px;
+	line-height: (65/120);
+	letter-spacing: -1px;
 
-	@include media-breakpoint-up(md) {
-		font-size: calc(40px + (80 - 40) * ((100vw - 335px) / (1920 - 335)));
-	}
-	@include media-breakpoint-up(xxl) {
-		font-size: 80px;
+	.font-family-cursive {
+		@extend %font-weight-regular;
+
+		font-size: 180px;
+		line-height: 78px;
+		letter-spacing: -1px;
 	}
 }
 
@@ -24,47 +26,36 @@ h2,
 .h2 {
 	@extend %font-family-title, %font-weight-black;
 	@include margin(top 1em bottom 1em);
-	@include letter-spacing(-20);
 
-	font-size: 23px;
-	line-height: (31/23);
+	font-size: 70px;
+	line-height: (65/70);
+	letter-spacing: -1px;
 
-	@include media-breakpoint-up(md) {
-		font-size: 50px;
-		line-height: (55/50);
+	.font-family-cursive {
+		@extend %font-weight-regular;
+
+		font-size: 100px;
+		line-height: (78/100);
+		letter-spacing: -1px;
 	}
 }
 
 h3,
 .h3 {
-	@extend %font-family-title, %font-weight-light;
+	@extend %font-family-title, %font-weight-black;
 	@include margin(top #{(30/30)}em bottom #{(20/30)}em);
-	@include letter-spacing(-20);
 
-	font-size: 30px;
-	line-height: (38/30);
-
-	@include media-breakpoint-up(md) {
-		@include margin(bottom #{(10/48)}em);
-		font-size: 48px;
-		line-height: (54/48);
-	}
+	font-size: 56px;
+	line-height: (60/56);
 }
 
 h4,
 .h4 {
-	@extend %font-family-title, %font-weight-medium;
+	@extend %font-family-title, %font-weight-black;
 	@include margin(top #{(30/18)}em bottom #{(20/18)}em);
 
-	font-size: 18px;
-	line-height: (22/18);
-
-	@include media-breakpoint-up(md) {
-		@include margin(top #{(60/24)}em bottom #{(30/24)}em);
-
-		font-size: 24px;
-		line-height: (26/24);
-	}
+	font-size: 30px;
+	line-height: (29/30);
 }
 
 h5,

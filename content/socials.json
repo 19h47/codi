@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Twitter",
+		"id": "twitter",
+		"link": "https://twitter.com"
+	},
+	{
+		"title": "Facebook",
+		"id": "facebook",
+		"link": "https://facebook.com"
+	},
+	{
+		"title": "Instagram",
+		"id": "instagram",
+		"link": "https://instagram.com"
+	},
+	{
+		"title": "LinkedIn",
+		"id": "linkedin",
+		"link": "https://linkedin.com"
+	}
+]

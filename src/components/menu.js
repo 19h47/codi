@@ -68,8 +68,7 @@ const Menu = () => (
 	</StyledMenu>
 );
 
-Menu.propTypes = {};
-
-Menu.defaultProps = {};
+// Menu.propTypes = {};
+// Menu.defaultProps = {};
 
 export default Menu;

@@ -84,8 +84,7 @@ const Login = () => (
 	</StyledLogin>
 );
 
-Login.propTypes = {};
-
-Login.defaultProps = {};
+// Login.propTypes = {};
+// Login.defaultProps = {};
 
 export default Login;

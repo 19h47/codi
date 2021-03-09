@@ -35,4 +35,9 @@
 			border-color: rgba(the_color(white), 1);
 		}
 	}
+
+	@at-root #{ $this }#{ & }--is-blue {
+		color: the_color(white);
+		background-color: the_color(blue, pure);
+	}
 }

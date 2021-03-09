@@ -4,4 +4,8 @@
  * See: https://www.gatsbyjs.com/docs/ssr-apis/
  */
 
-// You can delete this file if you're not using it
+import React from 'react';
+
+import { Wrap } from './src/components/wrap';
+
+export const wrapRootElement = ({ element }) => <Wrap>{element}</Wrap>;

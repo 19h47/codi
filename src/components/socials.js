@@ -14,6 +14,18 @@ const StyledSocials = styled.div``;
 const Ul = styled.ul`
 	list-style-type: none;
 	display:flex;
+
+	&[data-scroll] li {
+		transform: translate3d(0, 100%, 0);
+		opacity: 0;
+		will-change: transform, opacity;
+		transition: transform 1.5s var(--ease-out-expo), opacity 1.5s var(--ease-out-expo);
+	}
+
+	&.is-inview li {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
 `;
 
 const Li = styled.li`
@@ -53,12 +65,12 @@ const SocialIcons = {
 
 const Socials = () => (
 	<StyledSocials>
-		<Ul>
-			{socials.map(social => {
+		<Ul data-scroll>
+			{socials.map((social, index) => {
 				const Icon = SocialIcons[social.title];
 
 				return (
-					<Li key={social.id}>
+					<Li key={social.id} style={{ transitionDelay: `${index * 0.1}s` }}>
 						<StyledA
 							href={social.link}
 							aria-label={social.title}

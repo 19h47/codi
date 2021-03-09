@@ -29,6 +29,19 @@ const Title = styled.h3`
 		color: var(--yellow-bright);
 		font-weight: 400;
 	}
+
+	&[data-scroll] span {
+		display: inline-block;
+		transform: translate3d(0, 100%, 0);
+		opacity: 0;
+		will-change: transform, opacity;
+		transition: transform 1.5s var(--ease-out-expo), opacity 1.5s var(--ease-out-expo);
+	}
+
+	&[data-scroll].is-inview span {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
 `;
 
 const HorizontalLine = styled.hr`
@@ -36,6 +49,17 @@ const HorizontalLine = styled.hr`
 	opacity: 0.3;
 	border: none;
 	height: 1px;
+
+	&[data-scroll] {
+		transform: scaleX(0);
+		transform-origin: 0 center;
+		transition: transform 1.5s var(--ease-out-expo);
+		will-change: transform;
+	}
+
+	&[data-scroll].is-inview {
+		transform: scaleX(1);
+	}
 `;
 
 const Ul = styled.ul`
@@ -47,6 +71,18 @@ const Ul = styled.ul`
 		font-weight: 500;
 		font-size: 16px;
 		line-height: ${36 / 16};
+	}
+
+	&[data-scroll] li {
+		transform: translate3d(0, 100%, 0);
+		opacity: 0;
+		will-change: transform, opacity;
+		transition: transform 1.5s var(--ease-out-expo), opacity 1.5s var(--ease-out-expo);
+	}
+
+	&.is-inview li {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
 	}
 `;
 
@@ -75,10 +111,16 @@ const Footer = () => {
 			<div className="Site-container">
 				<div className="row d-flex align-items-center" style={{ marginBottom: '71px' }}>
 					<div className="col-6">
-						<Title>
-							Become a Codi
+						<Title data-scroll>
+							<span>Become</span> <span style={{ transitionDelay: '0.1s' }}>a</span>{' '}
+							<span style={{ transitionDelay: '0.2s' }}>Codi</span>
 							<br />
-							<span className="font-family-cursive">host</span>now.
+							<span
+								className="font-family-cursive"
+								style={{ transitionDelay: '0.3s' }}>
+								host
+							</span>
+							<span style={{ transitionDelay: '0.4s' }}>now</span><span style={{ transitionDelay: '0.5s' }}>.</span>
 						</Title>
 					</div>
 					<div className="col-6 d-flex justify-content-end">
@@ -90,20 +132,22 @@ const Footer = () => {
 				</div>
 				<div className="row">
 					<div className="col-12">
-						<HorizontalLine />
+						<HorizontalLine data-scroll />
 					</div>
 				</div>
 				<div className="row" style={{ marginTop: '87px' }}>
 					{menus.footer.map((item, index) => {
 						const child = item.items.map((child, childIndex) => (
-							<li key={childIndex}>
+							<li
+								key={childIndex}
+								style={{ transitionDelay: `${childIndex * 0.1}s` }}>
 								<Link to={child.link}>{child.title}</Link>
 							</li>
 						));
 
 						return (
 							<div className="col-3" key={index}>
-								<Ul>
+								<Ul data-scroll>
 									<li>
 										<h4 style={{ marginBottom: '42px' }}>{item.title}</h4>
 									</li>

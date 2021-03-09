@@ -1,14 +1,13 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
+  "name": "@voila/codi",
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "version": "0.0.0",
+  "author": "Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)",
   "dependencies": {
     "@19h47/architecture": "19h47/architecture",
     "@19h47/prettier-config": "^1.0.0",
     "bootstrap": "^4.6.0",
-    "gatsby": "^3.0.1",
+    "gatsby": "^3.0.3",
     "gatsby-cli": "^3.0.0",
     "gatsby-plugin-gatsby-cloud": "^2.0.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
@@ -21,10 +20,13 @@
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
+    "gsap": "^3.6.0",
+    "locomotive-scroll": "^4.1.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-locomotive-scroll": "^0.1.7",
     "ress": "^3.0.0",
     "sass": "^1.32.8",
     "styled-components": "^5.2.1"
@@ -33,7 +35,8 @@
     "prettier": "2.2.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "locomotive-scroll"
   ],
   "license": "0BSD",
   "scripts": {
@@ -47,9 +50,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/19h47/codi"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/19h47/codi/issues"
   }
 }

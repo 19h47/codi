@@ -5,6 +5,7 @@ module.exports = {
 		author: `@gatsbyjs`,
 	},
 	plugins: [
+		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-image`,
 		{
@@ -45,10 +46,10 @@ module.exports = {
 			resolve: `gatsby-plugin-google-fonts`,
 			options: {
 				fonts: [
-					`inter\:400,500,700,900` // you can also specify font weights and styles
+					`inter\:400,500,700,900`, // you can also specify font weights and styles
 				],
-				display: 'swap'
-			}
-		}
+				display: 'swap',
+			},
+		},
 	],
-}
+};

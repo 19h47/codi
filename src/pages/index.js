@@ -11,6 +11,21 @@ import Input from '../components/input';
 import Tag from '../components/tag';
 import Arrow from '../components/arrow';
 
+const H2 = styled.h2`
+	&[data-scroll] span {
+		display: inline-block;
+		transform: translate3d(0, 100%, 0);
+		opacity: 0;
+		will-change: transform, opacity;
+		transition: transform 1.5s var(--ease-out-expo), opacity 1.5s var(--ease-out-expo);
+	}
+
+	&[data-scroll].is-inview span {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+`;
+
 const heartBeat = keyframes`
 	0% {
 		opacity: 0;
@@ -128,8 +143,8 @@ const IndexPage = () => {
 			imageRef.current.querySelector('.js-image'),
 			{ scaleX: 1, scaleY: 1 },
 			{
-				scaleX: `${440 / 386}`,
-				scaleY: `${811 / 203}`,
+				scaleX: `${1 / (386 / 440)}`,
+				scaleY: `${1 / (203 / 811)}`,
 			},
 			'start',
 		);
@@ -137,8 +152,8 @@ const IndexPage = () => {
 			imageRef.current.querySelector('.js-body'),
 			{ scaleX: 1, scaleY: 1, opacity: 0 },
 			{
-				scaleX: `${440 / 386}`,
-				scaleY: `${811 / 203}`,
+				scaleX: `${1 / (386 / 440)}`,
+				scaleY: `${1 / (203 / 811)}`,
 				opacity: 1,
 			},
 			'start',
@@ -246,9 +261,25 @@ const IndexPage = () => {
 							style={{ display: 'inline-block', verticalAlign: 'middle' }}
 						/>
 					</div>
+					<div className="col-5 offset-md-2">
+						<H2 data-scroll>
+							<span>Right</span> <span style={{ transitionDelay: '0.1s' }}>in</span>{' '}
+							<span style={{ transitionDelay: '0.2s' }}>your</span>{' '}
+							<span
+								className="font-family-cursive color-yellow-bright"
+								style={{
+									marginTop: '21px',
+									color: 'var(--yellow-bright)',
+									transitionDelay: '0.3s',
+								}}>
+								Neighborhood
+							</span>
+						</H2>
+						<p style={{ color: 'var(--blue-dark-grayish)', marginRight: `${(2 / 5) * 100}%` }}>Bike or walk to work. Have something to look forward to. Get your work done around others, just a few blocks from home</p>
+					</div>
 				</div>
 			</div>
-		</Layout>
+		</Layout >
 	);
 };
 

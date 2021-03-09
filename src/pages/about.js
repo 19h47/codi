@@ -82,6 +82,7 @@ const OurValues = styled.div`
 
 const OurStory = styled.div`
 	margin: 100px 0;
+
 	p {
 		color: var(--blue-dark-grayish);
 		font-size: 18px;

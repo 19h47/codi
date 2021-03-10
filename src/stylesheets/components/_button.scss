@@ -40,4 +40,9 @@
 		color: the_color(white);
 		background-color: the_color(blue, pure);
 	}
+
+	@at-root #{ $this }#{ & }--is-yellow {
+		color: the_color(black);
+		background-color: the_color(yellow, very-pale);
+	}
 }

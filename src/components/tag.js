@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledTag = styled.div`
-display: inline-block;
-padding: 22px 28px 23px 33px;
+	display: inline-block;
+	padding: 22px 28px 23px 33px;
 	background: var(--white);
 	opacity: 0.98;
 	box-shadow: 20px 20px 30px rgba(var(--black), 0.1);
@@ -27,15 +27,14 @@ padding: 22px 28px 23px 33px;
 		color: var(--blue-pure);
 	}
 
-
 	&.is-inview {
 		transform: translate3d(0, 0, 0);
 		opacity: 1;
 	}
 `;
 
-const Tag = ({ style }) => (
-	<StyledTag style={style} data-scroll>
+const Tag = ({ style, className }) => (
+	<StyledTag className={className} style={style} data-scroll>
 		<StaticImage
 			src="../images/phone.png"
 			width={37}
@@ -50,10 +49,12 @@ const Tag = ({ style }) => (
 );
 
 Tag.defaultProps = {
-	style: {}
+	style: {},
+	className: '',
 };
 Tag.propTypes = {
-	style: PropTypes.object
+	style: PropTypes.object,
+	className: PropTypes.string,
 };
 
 export default Tag;

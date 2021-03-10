@@ -5,11 +5,15 @@ import styled, { keyframes } from 'styled-components';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import { gsap } from 'gsap';
 
+import SiteContainer from '../components/site-container';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Input from '../components/input';
 import Tag from '../components/tag';
 import Arrow from '../components/arrow';
+import Card from '../components/card';
+
+import Work from '../images/svg/work.inline.svg';
 
 const H2 = styled.h2`
 	&[data-scroll] span {
@@ -94,16 +98,14 @@ const Content = styled.div`
 `;
 
 const Image = styled.div`
-	overflow: hidden;
-	background-color: var(--white);
-	margin-left: ${(1 / 5) * 100}%;
 	border-bottom-right-radius: 40px;
 	border-bottom-left-radius: 40px;
 
 	img {
 		image-rendering: high-quality;
 	}
-	& > header {
+
+	& > div {
 		border-radius: 40px;
 		overflow: hidden;
 
@@ -115,7 +117,7 @@ const Image = styled.div`
 		animation-play-state: paused;
 	}
 
-	&.is-inview > header {
+	&.is-inview div {
 		animation-play-state: running;
 	}
 `;
@@ -134,8 +136,8 @@ const IndexPage = () => {
 			{
 				y: 562,
 				x: -537,
-				scaleX: `${386 / 440}`,
-				scaleY: `${203 / 811}`,
+				scaleX: `${387 / 440}`,
+				scaleY: `${204 / 812}`,
 			},
 			'start',
 		);
@@ -143,30 +145,37 @@ const IndexPage = () => {
 			imageRef.current.querySelector('.js-image'),
 			{ scaleX: 1, scaleY: 1 },
 			{
-				scaleX: `${1 / (386 / 440)}`,
-				scaleY: `${1 / (203 / 811)}`,
+				scaleX: `${440 / 387}`,
+				scaleY: `${812 / 204}`,
 			},
 			'start',
 		);
 		tl.current.fromTo(
-			imageRef.current.querySelector('.js-body'),
-			{ scaleX: 1, scaleY: 1, opacity: 0 },
+			imageRef.current.querySelector('div'),
+			{ borderRadius: '40px' },
 			{
-				scaleX: `${1 / (386 / 440)}`,
-				scaleY: `${1 / (203 / 811)}`,
-				opacity: 1,
+				borderRadius: '20px',
 			},
 			'start',
 		);
+		// tl.current.fromTo(
+		// 	imageRef.current.querySelector('.js-body'),
+		// 	{ scaleX: 1, scaleY: 1, opacity: 0 },
+		// 	{
+		// 		scaleX: `${1 / (387 / 440)}`,
+		// 		scaleY: `${1 / (204 / 812)}`,
+		// 		opacity: 1,
+		// 	},
+		// 	'start',
+		// );
 	});
 
 	useEffect(() => {
 		if (scroll) {
-			scroll.on('scroll', ({ currentElements, scroll, limit }) => {
-				const progress = (1 * scroll.y) / limit.y;
+			scroll.on('scroll', ({ scroll, limit }) => {
+				const progress = scroll.y / limit.y;
 
-				console.log(progress);
-				tl.current.progress(progress * 2);
+				tl.current.progress(progress * 4);
 			});
 		}
 	}, [scroll]);
@@ -175,8 +184,8 @@ const IndexPage = () => {
 		<Layout>
 			<SEO title="Home" />
 
-			<div className="Site-container" style={{ zIndex: '2' }}>
-				<div className="row">
+			<SiteContainer>
+				<div className="row" style={{ position: 'relative', zIndex: '2' }}>
 					<div className="col-6 offset-md-1">
 						<div
 							style={{
@@ -215,9 +224,18 @@ const IndexPage = () => {
 						</div>
 						<Arrow />
 					</div>
-					<div className="col-5 position-relative">
-						<Tag style={{ position: 'absolute', zIndex: '1', bottom: '280px' }} />
+					<div className="col-5 position-relative d-flex justify-content-end">
 						<Tag
+							className="js-tag"
+							style={{
+								position: 'absolute',
+								zIndex: '1',
+								bottom: '280px',
+								left: '0',
+							}}
+						/>
+						<Tag
+							className="js-tag"
 							style={{
 								position: 'absolute',
 								zIndex: '1',
@@ -226,39 +244,56 @@ const IndexPage = () => {
 							}}
 						/>
 						<Image data-scroll ref={imageRef}>
-							<header>
+							<div>
 								<StaticImage
 									className="js-image"
 									src="../images/office.png"
 									width={440}
+									height={812}
 									quality={95}
 									formats={['AUTO', 'WEBP', 'AVIF']}
 									alt="Office"
 									style={{ display: 'inline-block', verticalAlign: 'middle' }}
 								/>
-							</header>
-							<div
-								className="js-body"
-								style={{
-									padding: '36px',
-								}}>
-								<p>Perfect Creative Space</p>
 							</div>
 						</Image>
 					</div>
 				</div>
-			</div>
 
-			<div className="Site-container" style={{ marginTop: '180px', zIndex: '1' }}>
-				<div className="row">
+				<Work
+					style={{
+						fill: 'var(--blue-light-grayish)',
+						position: 'absolute',
+						margin: 'auto',
+						maxWidth: '100%',
+					}}
+				/>
+
+				<div
+					className="row"
+					style={{ position: 'relative', marginTop: '180px', zIndex: '1' }}>
 					<div className="col-4 offset-md-1">
+						<Card
+							style={{
+								position: 'absolute',
+								top: '0',
+								right: '0',
+								zIndex: '1',
+								transform: 'translate3d(calc(50% - 6px), 0, 0)',
+							}}
+						/>
 						<StaticImage
 							src="../images/map.png"
 							width={393}
 							quality={95}
 							formats={['AUTO', 'WEBP', 'AVIF']}
 							alt="Office"
-							style={{ display: 'inline-block', verticalAlign: 'middle' }}
+							style={{
+								minWidth: '393px',
+								display: 'inline-block',
+								verticalAlign: 'middle',
+								marginLeft: `${(40 / 400) * 100}%`,
+							}}
 						/>
 					</div>
 					<div className="col-5 offset-md-2">
@@ -275,11 +310,80 @@ const IndexPage = () => {
 								Neighborhood
 							</span>
 						</H2>
-						<p style={{ color: 'var(--blue-dark-grayish)', marginRight: `${(2 / 5) * 100}%` }}>Bike or walk to work. Have something to look forward to. Get your work done around others, just a few blocks from home</p>
+						<p
+							style={{
+								color: 'var(--blue-dark-grayish)',
+								marginRight: `${(2 / 5) * 100}%`,
+							}}>
+							Bike or walk to work. Have something to look forward to. Get your work
+							done around others, just a few blocks from home
+						</p>
 					</div>
 				</div>
-			</div>
-		</Layout >
+			</SiteContainer>
+
+			<SiteContainer style={{ marginTop: '180px', marginBottom: '180px' }}>
+				<div className="row">
+					<div className="col-4 offset-md-1">
+						<div style={{ marginLeft: `${(40 / 400) * 100}%` }}>
+							<H2 data-scroll>
+								<span>Exclusive</span>{' '}
+								<span style={{ transitionDelay: '0.1s' }}>access</span>{' '}
+								<span
+									className="font-family-cursive color-yellow-bright"
+									style={{
+										marginTop: '5px',
+										color: 'var(--cyan-bright)',
+										transitionDelay: '0.3s',
+									}}>
+									Anywhere
+								</span>
+							</H2>
+							<p style={{ color: 'var(--blue-dark-grayish)' }}>
+								Codi is members-only. Book a workspace nationwide for one price.
+								Start a free trial now & watch your productivity skyrocket.
+							</p>
+						</div>
+					</div>
+					<div className="col-7">
+						<StaticImage
+							src="../images/cycling-lady.png"
+							width={730}
+							quality={95}
+							formats={['AUTO', 'WEBP', 'AVIF']}
+							alt="Cycling lady"
+							style={{
+								display: 'inline-block',
+								verticalAlign: 'middle',
+							}}
+						/>
+					</div>
+				</div>
+			</SiteContainer>
+
+			<SiteContainer style={{ marginTop: '180px', marginBottom: '180px' }}>
+				<div className="row">
+					<div className="col-12">
+						<H2 data-scroll style={{ textAlign: 'center' }}>
+							<span>Everything</span>{' '}
+							<span style={{ transitionDelay: '0.1s' }}>you</span>
+							<br />
+							<span style={{ transitionDuration: '0.2s' }}>need</span>{' '}
+							<span style={{ transitionDuration: '0.3s' }}>for</span>{' '}
+							<span
+								className="font-family-cursive color-yellow-bright"
+								style={{
+									marginTop: '5px',
+									color: 'var(--blue-pure)',
+									transitionDelay: '0.4s',
+								}}>
+								Work
+							</span>
+						</H2>
+					</div>
+				</div>
+			</SiteContainer>
+		</Layout>
 	);
 };
 

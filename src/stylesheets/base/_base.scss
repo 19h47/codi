@@ -15,7 +15,9 @@
 	--blue-light-grayish: #{the_color(blue, light-grayish)};
 	--blue-very-soft: #{the_color(blue, very-soft)};
 	--yellow-bright: #{the_color(yellow, bright)};
+	--yellow-very-pale: #{the_color(yellow, very-pale)};
 	--cyan-bright: #{the_color(cyan, bright)};
+	--cyan-strong: #{the_color(cyan, strong)};
 	--red-very-dark-grayish: #{the_color(red, very-dark-grayish)};
 	--gray-light: #{the_color(gray, light)};
 	--ease-out-expo: #{map-get($easings, ease-out-expo)};

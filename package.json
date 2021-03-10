@@ -7,7 +7,7 @@
     "@19h47/architecture": "19h47/architecture",
     "@19h47/prettier-config": "^1.0.0",
     "bootstrap": "^4.6.0",
-    "gatsby": "^3.0.3",
+    "gatsby": "^3.0.4",
     "gatsby-cli": "^3.0.0",
     "gatsby-plugin-gatsby-cloud": "^2.0.0",
     "gatsby-plugin-google-fonts": "^1.0.1",

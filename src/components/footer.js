@@ -71,6 +71,13 @@ const Ul = styled.ul`
 		font-weight: 500;
 		font-size: 16px;
 		line-height: ${36 / 16};
+		transition: opacity 0.5s var(--ease-out-expo);
+		will-change: opacity;
+
+		&:focus,
+		&:hover {
+			opacity: 0.7;
+		}
 	}
 
 	&[data-scroll] li {

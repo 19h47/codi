@@ -4,10 +4,7 @@
 	 id="Calque_1" text-rendering="geometricPrecision" image-rendering="optimizeQuality" shape-rendering="geometricPrecision"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="4300px" height="4817.2px"
 	 viewBox="0 0 4300 4817.2" style="enable-background:new 0 0 4300 4817.2;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill-rule:evenodd;clip-rule:evenodd;}
-</style>
-<path class="st0" d="M28.2,235.9c13.4-43.3,31.7-80.4,54.2-111.4l2284.9,2288.1L94.5,4707.8c-15-17.8-28.2-37.5-39.5-58.8
+<path d="M28.2,235.9c13.4-43.3,31.7-80.4,54.2-111.4l2284.9,2288.1L94.5,4707.8c-15-17.8-28.2-37.5-39.5-58.8
 	c-72.7-136.8-52.3-347.4-52.3-501.9V643.4C2.6,516-9.1,356.7,28.2,235.9L28.2,235.9z M319.4,0.8c4.3-0.3,8.7-0.5,13.1-0.6
 	c187.6-5.3,285.7,78.9,439.4,169.5l2428.2,1401.8l-653.3,659.7L319.4,0.8L319.4,0.8z M3428.5,1703.4l519,299.6
 	c103.3,59.6,192.7,103.4,270.4,198.7c126.5,155.3,110,333.3-72.3,483.1c-80.5,66.2-189.3,121.2-280.2,173.9L3427.3,3113

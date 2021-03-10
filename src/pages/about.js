@@ -3,7 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import pages from '../../content/pages.json';
+import pages from '../content/about-page.json';
+
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -104,7 +105,7 @@ const About = () => (
 					</H1>
 				</div>
 				<div className="col-12 col-md-4 offset-md-2">
-					<Content>{pages.about.content}</Content>
+					<Content>{pages.content}</Content>
 				</div>
 			</div>
 		</div>
@@ -113,7 +114,7 @@ const About = () => (
 			<div className="Site-container">
 				<div className="row" style={{ marginBottom: '75px' }}>
 					<div className="col-12">
-						<h2 class="text-align-center margin-0">
+						<h2 className="text-align-center margin-0">
 							Our{' '}
 							<span
 								className="font-family-cursive"
@@ -125,10 +126,10 @@ const About = () => (
 				</div>
 				<div className="row">
 					<div className="col-4 offset-md-2">
-						<p>{pages.about.story.content[0]}</p>
+						<p>{pages.story.content[0]}</p>
 					</div>
 					<div className="col-4">
-						<p>{pages.about.story.content[1]}</p>
+						<p>{pages.story.content[1]}</p>
 					</div>
 				</div>
 			</div>
@@ -150,9 +151,9 @@ const About = () => (
 				</div>
 				<div className="row d-flex align-items-end">
 					<div className="col-4 offset-2">
-						<p>{pages.about.values.content}</p>
+						<p>{pages.values.content}</p>
 						<ul>
-							{pages.about.values.items.map(item => (
+							{pages.values.items.map(item => (
 								<li>{item}</li>
 							))}
 						</ul>

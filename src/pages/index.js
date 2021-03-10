@@ -1,10 +1,10 @@
 import React, { useEffect, useLayoutEffect, useRef } from 'react';
-// import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled, { keyframes } from 'styled-components';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import { gsap } from 'gsap';
 
+import SectionHow from '../components/section-how';
 import SiteContainer from '../components/site-container';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -330,7 +330,7 @@ const IndexPage = () => {
 								<span>Exclusive</span>{' '}
 								<span style={{ transitionDelay: '0.1s' }}>access</span>{' '}
 								<span
-									className="font-family-cursive color-yellow-bright"
+									className="font-family-cursive"
 									style={{
 										marginTop: '5px',
 										color: 'var(--cyan-bright)',
@@ -361,25 +361,26 @@ const IndexPage = () => {
 				</div>
 			</SiteContainer>
 
-			<SiteContainer style={{ marginTop: '180px', marginBottom: '180px' }}>
+			<SectionHow style={{ marginTop: '180px', marginBottom: '180px' }} />
+
+			<SiteContainer>
 				<div className="row">
-					<div className="col-12">
-						<H2 data-scroll style={{ textAlign: 'center' }}>
-							<span>Everything</span>{' '}
-							<span style={{ transitionDelay: '0.1s' }}>you</span>
-							<br />
-							<span style={{ transitionDuration: '0.2s' }}>need</span>{' '}
-							<span style={{ transitionDuration: '0.3s' }}>for</span>{' '}
+					<div className="col-6 offset-md-2">
+						<H2 data-scroll>
+							<span>People</span>{' '}
 							<span
-								className="font-family-cursive color-yellow-bright"
+								className="font-family-cursive"
 								style={{
 									marginTop: '5px',
-									color: 'var(--blue-pure)',
-									transitionDelay: '0.4s',
+									color: 'var(--yellow-bright)',
+									transitionDelay: '0.1s',
 								}}>
-								Work
+								love it!
 							</span>
 						</H2>
+					</div>
+					<div className="col-4">
+						<p style={{ color: 'var(--blue-dark-grayish)' }}>Perfect for remote workers, long commuters and top employers. Already trusted by top Fortune 500 companies.</p>
 					</div>
 				</div>
 			</SiteContainer>

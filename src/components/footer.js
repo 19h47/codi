@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import menus from '../../content/menus.json';
+import menus from '../content/menus.json';
 
 import ArrowRight from '../images/svg/arrow-right.inline.svg';
 import AppStore from '../images/svg/app-store.inline.svg';
@@ -207,8 +207,7 @@ const Footer = () => {
 	);
 };
 
-Footer.propTypes = {};
-
-Footer.defaultProps = {};
+// Footer.propTypes = {};
+// Footer.defaultProps = {};
 
 export default Footer;

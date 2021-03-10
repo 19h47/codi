@@ -31,7 +31,7 @@ const Card = ({ style }) => {
 
 				<div className="d-flex align-items-center" style={{ marginTop: '24px' }}>
 					<button
-						class="Button Button--is-yellow"
+						className="Button Button--is-yellow"
 						type="button"
 						style={{ padding: '8px 14px' }}>
 						<Star style={{ width: '16px', height: '16px', marginRight: '6px' }} />

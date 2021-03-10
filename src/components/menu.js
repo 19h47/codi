@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import menus from '../../content/menus.json';
+import menus from '../content/menus.json';
 import Heart from '../images/svg/heart.inline.svg';
 
 const StyledMenu = styled.div``;

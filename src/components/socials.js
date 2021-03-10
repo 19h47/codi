@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import socials from '../../content/socials.json';
+import socials from '../content/socials.json';
 
 import Twitter from '../images/svg/twitter.inline.svg';
 import LinkedIn from '../images/svg/linkedin.inline.svg';

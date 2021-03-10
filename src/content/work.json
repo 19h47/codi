@@ -1,0 +1,47 @@
+[
+	{
+		"title": "Monitor",
+		"icon": "../images/monitor.png",
+		"content": "To keep your home safe, we cover every booking with $1M in insurance against accidents."
+	},
+	{
+		"title": "Coffee",
+		"icon": "../images/coffee.png",
+		"content": "To keep your home safe, we cover every booking with $1M in insurance against accidents"
+	},
+	{
+		"title": "Kitchen",
+		"icon": "../images/kitchen.png",
+		"content": "To keep your home safe, we cover every booking with $1M in insurance against accidents"
+	},
+	{
+		"title": "WiFi",
+		"icon": "../images/wifi.png",
+		"content": "To keep your home safe, we cover every booking with $1M in insurance against accidents. "
+	},
+	{
+		"title": "Meeting",
+		"icon": "../images/meeting.png",
+		"content": "To keep your home safe, we cover every booking with $1M in insurance against accidents"
+	},
+	{
+		"title": "Parking",
+		"icon": "../images/parking.png",
+		"content": "To keep your home safe, we cover every booking with $1M in insurance against accidents.  "
+	},
+	{
+		"title": "Printer",
+		"icon": "../images/printer.png",
+		"content": "To keep your home safe, we cover every booking with $1M in insurance against accidents. "
+	},
+	{
+		"title": "Whiteboard",
+		"icon": "../images/whiteboard.png",
+		"content": "To keep your home safe, we cover every booking with $1M in insurance against accidents."
+	},
+	{
+		"title": "Private call",
+		"icon": "../images/phone.png",
+		"content": "To keep your home safe, we cover every booking with $1M in insurance against accidents. "
+	}
+]

@@ -2,9 +2,17 @@ module.exports = {
 	siteMetadata: {
 		title: `Codi`,
 		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `@gatsbyjs`,
+		author: `@19h47`,
 	},
 	plugins: [
+		`gatsby-transformer-json`,
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `content`,
+				path: `${__dirname}/src/content`,
+			},
+		},
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-image`,
@@ -26,7 +34,7 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+				icon: `src/images/icon.png`, // This path is relative to the root of the site.
 			},
 		},
 		`gatsby-plugin-sass`,
